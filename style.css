@@ -1,0 +1,827 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+:root {
+    --white-var: #ffffff;
+    --black-var1: #000000;
+    --black-var2: #000000ee;
+    --black-var3: #2b2b2b;
+    --black-var4: #414141;
+    --gray-var: #3f3f3f;
+    --general-radius: 0.4rem;
+    --box-shade: 0 0.05rem 5px var(--black-var2);
+}
+
+body {
+    position: relative;
+    z-index: -10;
+    font-size: 62.5%;
+}
+
+li {
+    display: flex;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black-var1);
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: flex;
+    width: 100%;
+}
+
+header {
+    position: sticky;
+    z-index: 1;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5rem;
+    justify-content: space-between;
+    align-items: center;background-color: var(--white-var);
+    box-shadow: var(--box-shade);
+    transition: box-shadow .3s ease-in-out;
+}
+
+#logo {
+    width: unset;
+    max-height: 3rem;
+}
+
+nav, nav * {
+    display: flex;
+    font-size: 1rem;
+}
+
+nav {
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.menu-btns {
+    font-size: 2.25rem;
+    cursor: pointer;
+}
+
+#open-btn {
+    display: none;
+}
+
+#close-btn {
+    display: none;
+}
+
+#menu-box {
+    top: 4.5rem;
+    right: 2rem;
+    min-width: 12.5rem;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--general-radius);
+    background-color: var(--white-var);
+    box-shadow: var(--box-shade);
+    opacity: 90%;
+}
+
+#menu-box li {
+    cursor: pointer;
+    justify-content: center;
+}
+
+#menu-box li a {
+    width: 100%;
+    padding: 1rem 1rem;
+    justify-content: center;
+}
+
+#menu-box li a:hover {
+    background-color: var(--black-var4);
+    color: var(--white-var);
+}
+
+#menu-box .splitter {
+    width: 100%;
+    height: 0.5px;
+    margin: 0;
+    background-color: var(--black-var4);
+    border: none;
+}
+
+#menu-box * {
+    display: flex;
+}
+
+.nav-bar {
+    display: flex; /* change later */
+    gap: 2.5rem;
+}
+
+.btn.prime-action {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background-color: var(--black-var3);
+    color: var(--white-var);
+    padding: 0.5rem 1rem;
+    border-radius: var(--general-radius);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    transition: 0.1s ease;
+}
+
+.btn.prime-action a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: var(--white-var);
+}
+
+.btn.prime-action:hover {
+    background-color: var(--black-var1);
+}
+
+.btn.prime-action:active {
+    scale: 0.95;
+}
+
+.bx-cart-alt {
+    color: var(--white-var);
+    font-size: 1.5rem;
+}
+
+.main-sections {
+    position: relative;
+    top: 0px;
+    z-index: -1;
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.containers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 90%;
+    padding: 5rem;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+}
+
+#home-box h1 {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.001rem;
+    color: var(--black-var1);
+    text-align: center;
+}
+
+#home-box p, p {
+    font-size: 1rem;
+    color: #3f3f3f;
+    width: 60%;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.hero-grid {
+    position: relative;
+    top: 0px;
+    margin-top: 3rem;
+    width: 100%;
+    border-radius: var(--general-radius);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.hero-gridles {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray-var);
+    border-radius: var(--general-radius);
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: var(--black-var1);
+    text-align: center;
+}
+
+.bx-purchase-tag {
+    font-size: 1.3rem;
+}
+
+#about-box embed {
+    margin-top: 3rem;
+    border-radius: var(--general-radius);
+    width: 100%;
+    aspect-ratio: 5 / 3;
+}
+
+#about-box .btn.prime-action {
+    margin-top: 1rem;
+}
+
+#pricing h2 {
+    justify-content: center;
+}
+
+#pricing-grid {
+    position: relative;
+    top: 0px;
+    margin-top: 3rem;
+    width: 95%;
+    max-width: 950px;
+    border-radius: var(--general-radius);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.pricing-gridles {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    width: 100%;
+    min-width: 265px;
+    box-shadow: var(--box-shade);
+    border-radius: var(--general-radius);
+    transition: 0.1s ease-out;
+}
+
+
+.pricing-gridles * {
+    display: flex;
+    border-radius: var(--general-radius);
+}
+
+.pricing-img {
+    position: relative;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 9rem;
+    margin-bottom: 1rem;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.pricing-name {
+    position: relative;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    color: var(--black-var1);
+    font-weight: 600;
+    background-color: #ffffffa2;
+    border: solid 0.1rem var(--white-var);
+}
+
+.pricing-description, .spec-feature {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    text-align: left;
+    padding: 0.5rem;
+    display: unset;
+    margin-left: 0.5rem;
+}
+
+.pricing-description strong, .spec-feature strong {
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    color: var(--black-var1);
+    margin-bottom: 0.2rem;
+    margin-left: -0.5rem;
+    letter-spacing: 0.7px;
+}
+
+.pricing-description span, .spec-feature span {
+    color: var(--black-var2);
+    font-weight: 600;
+    font-size: 0.82rem;
+    display: inline;
+}
+
+.pricing-description {
+    width: 100%;
+}
+
+.spec-feature {
+    width: 100%;
+}
+
+.pricing-gridles .btn.prime-action {
+    position: relative;
+    bottom: 0;
+    width: 90%;
+    margin: 1rem auto 0 auto;
+    justify-content: center;
+}
+
+.pricing-gridles:nth-of-type(1) .pricing-img {
+    background-image: url(./files/burger-fries\ 1.jpg);
+}
+
+.pricing-gridles:nth-of-type(2) .pricing-img {
+    background-image: url(./files/gourmet.jpg);
+}
+
+.pricing-gridles:nth-of-type(3) .pricing-img {
+    background-image: url(./files/family-food.jpg);
+}
+
+.pricing-gridles:nth-of-type(4) .pricing-img {
+    background-image: url(./files/grilled.jpg);
+}
+
+.pricing-gridles:nth-of-type(5) .pricing-img {
+    background-image: url(./files/kids-meal.jpg);
+}
+
+.pricing-gridles:nth-of-type(6) .pricing-img {
+    background-image: url(./files/party-food.jpg);
+}
+
+#info-loc {
+    flex-direction: column;
+}
+
+#reviews.containers {
+    flex-direction: column;
+}
+
+#reviewing {
+    display: flex;
+    margin-top: 3rem;
+    flex-direction: row;
+}
+
+.containers #rev-container, .containers #rev-container * {
+    display: flex;
+}
+
+.containers #rev-container {
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+.containers #rev-container h3, h3 {
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 1rem;
+}
+
+.review-box {
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+.img {
+    height: 2.5rem;
+    min-width: 2.5rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+#persona-1 {
+    background-image: url(./files/persona\ \(1\).jpg);
+}
+
+#persona-2 {
+    background-image: url(./files/persona\ \(2\).jpg);
+}
+
+#persona-3 {
+    background-image: url(./files/persona\ \(3\).jpg);
+}
+
+.review-context {
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.review-context p {
+    text-align: left;
+    line-height: 1.1rem;
+    width: 80%;
+    text-align: justify;
+}
+
+.review-context i {
+    font-size: 1rem;
+}
+
+form, form *:not(div) {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    margin-top: 2.5rem;
+    box-shadow: 0 5px 10px var(--black-var3);
+    padding: 1.5rem;
+    border-radius: var(--general-radius);
+}
+
+form h4 {
+    font-size: 1.8rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 1rem;
+}
+
+form p {
+    text-align: left;
+    line-height: 1.1rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 2rem 0 2rem 0;
+}
+
+.fieldsets {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+fieldset {
+    gap: 0.8rem;
+    font-size: 1rem;
+    border: none;
+}
+
+label {
+    font-weight: 600;
+    color: var(--black-var1);
+}
+
+#user-email {
+    position: relative;
+}
+
+input, textarea {
+    position: relative;
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+}
+
+form textarea {
+    resize: none;
+    min-width: 100%;
+    height: 5rem;
+}
+
+form button {
+    margin-top: 2.5rem;
+}
+
+fieldset i {
+    font-size: 1.5rem;
+    color: var(--black-var3);
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--black-var4);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 1% 10%;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+footer * {
+    display: flex;
+    color: var(--white-var);
+}
+
+address {
+    flex-direction: column;
+}
+
+h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.address-set {
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+.address-set i {
+    font-size: 1.1rem;
+}
+
+.address-set p {
+    font-size: 0.85rem;
+    min-width: 100%;
+    cursor: pointer;
+    text-underline-offset: 0.2rem;
+    line-height: 1.3rem;
+}
+
+.address-set p:hover {
+    text-decoration: underline;
+}
+
+hr {
+    background-color: var(--white-var);
+    width: 100%;
+    margin: 1.5rem 0;
+    height: 0.01rem;
+    border: none;
+}
+
+.dev-info, .collaboration {
+    flex-direction: column;
+    align-items: center;
+}
+
+.more-footer h6 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.collaboration p, .collaboration a, #copyrights, #copyrights a {
+    display: inline;
+}
+
+.collaboration p {
+    text-align: justify;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+}
+
+.collaboration a {
+    text-decoration: underline;
+}
+
+#copyrights {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+#footer-logo {
+    width: unset;
+    max-height: 5rem;
+    margin: auto 0;
+}
+
+/* ----------------------------------------- */
+
+@media (max-width: 600px) {
+    /* Styles for mobile phones */
+
+    header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #logo {
+        max-height: 2.75rem
+    }
+
+    #open-btn {
+        display: inline-block;
+    }
+
+    .nav-bar, #in-nav.btn.prime-action {
+        display: none;
+    }
+
+    .containers {
+        padding: 0;
+        width: 90%
+    }
+
+    #home-box h1 {
+        font-size: 2rem;
+    }
+
+    #home-box p, p {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        width: 90%;
+    }
+
+    #pricing-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        margin-bottom: 3rem;
+    }
+
+    .containers #rev-container h3 {
+        margin-bottom: 0;
+    }
+
+    #rev-container {
+        margin-bottom: 3rem
+    }
+
+    #reviewing {
+        flex-direction: column;
+    }
+
+    #reviews {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .more-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    /* Styles for tablets */
+
+    #logo {
+      max-height: 2.75rem
+    }
+
+    #open-btn {
+        display: inline-block;
+    }
+
+    .nav-bar, #in-nav.btn.prime-action {
+        display: none;
+    }
+
+    .main-sections {
+        margin: 5rem 0;
+    }
+
+    .containers {
+        padding: 0;
+        width: 90%
+    }
+
+    #pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin-bottom: 3rem;
+    }
+
+    form {
+        min-width: 50%;
+        margin-top: 0;
+    }
+
+    .more-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    /* Styles for small laptops */
+    
+    #logo {
+      max-height: 2.5rem
+    }
+
+    #open-btn {
+        display: inline-block;
+    }
+
+    .nav-bar, #in-nav.btn.prime-action {
+        display: none;
+    }
+
+    .main-sections {
+        margin: 5rem 0;
+    }
+
+    .containers {
+        padding: 0;
+        width: 90%
+    }
+
+    #pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin-bottom: 3rem;
+    }
+    
+    .pricing-gridles:hover {
+      position: relative;
+      z-index: 3;
+      scale: 1.05;
+    }
+
+    form {
+        min-width: 50%;
+        margin-top: 0;
+    }
+
+    .more-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem
+    }
+}
+
+  @media (min-width: 992px) and (max-width: 1200px) {
+    /* Styles for laptops and desktops */
+
+    #open-btn {
+        display: none;
+    }
+
+    .main-sections {
+        margin: 5rem 0;
+    }
+
+    .containers {
+        padding: 0;
+        width: 90%
+    }
+
+    #pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        margin-bottom: 3rem;
+    }
+    
+    .pricing-gridles:hover {
+      position: relative;
+      z-index: 3;
+      scale: 1.05;
+    }
+
+    form {
+        min-width: 50%;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1201px) {
+    /* Styles for large desktops */
+
+    #open-btn {
+        display: none;
+    }
+
+    .main-sections {
+        margin: 5rem 0;
+    }
+    
+    .pricing-gridles:hover {
+      position: relative;
+      z-index: 3;
+      scale: 1.05;
+    }
+}
