@@ -16,12 +16,15 @@ const openMenu = document.getElementById("open-btn");
 const closeMenu = document.getElementById("close-btn");
 const navBar = document.getElementsByClassName("nav-bar");
 const menuBox = document.getElementById("menu-box");
+const menuOverlay = document.getElementById("menu-overlay");
 
 openMenu.addEventListener("click", () => {
     if (navBar[0].style.display == '') {
         openMenu.style.display = "none";
         closeMenu.style.display = "inline-block";
         menuBox.style.display = "flex";
+        menuOverlay.style.display = "block";
+        menuOverlay.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))"
     }
 });
 
@@ -30,6 +33,7 @@ closeMenu.addEventListener("click", () => {
         openMenu.style.display = "inline-block";
         closeMenu.style.display = "none";
         menuBox.style.display = "none";
+        menuOverlay.style.backgroundImage = "none";
     }
 });
 
@@ -38,6 +42,17 @@ menuBox.addEventListener("click", () => {
         openMenu.style.display = "inline-block";
         closeMenu.style.display = "none";
         menuBox.style.display = "none";
+        menuOverlay.style.backgroundImage = "none";
+    }
+});
+
+menuOverlay.addEventListener("click", () => {
+    if (navBar[0].style.display == '') {
+        openMenu.style.display = "inline-block";
+        closeMenu.style.display = "none";
+        menuBox.style.display = "none";
+        menuOverlay.style.display = "none";
+        menuOverlay.style.backgroundImage = "none";
     }
 });
 
@@ -60,3 +75,29 @@ for (let i = 0; i < rateStars.length; i++) {
       }
     });
 }
+
+// ---------------------------------------------- //
+
+
+const loadingOverlay = document.getElementById("loading-overlay");
+const loadingProgress = document.getElementById("loading-bar");
+
+document.onreadystatechange = function () {
+    if (document.readyState == 'loading') {
+        loadingProgress.style.width = "20%";
+    } else if (document.readyState == 'interactive') {
+        loadingProgress.style.width = "50%";
+    } else if (document.readyState == 'complete') {
+        loadingProgress.style.width = "100%";
+    }
+};
+
+function widthTransComplete(event) {
+    if (event.propertyName === 'width') {
+        console.log('Width transition completed.');
+        loadingOverlay.style.display = "none";
+        document.body.style.overflow = "scroll";
+    }
+}
+
+loadingProgress.addEventListener('transitionend', widthTransComplete);
