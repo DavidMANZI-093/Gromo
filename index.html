@@ -6,17 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="./files/Fast Food - Pin.png" type="image/x-png">
+    <link rel="preload" href="./files/Fast Food - Black.png" as="image">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./styles-2.css">
     <title>gromo - Welcome!</title>
 </head>
 <body id="main">
+    <div id="loading-overlay">
+        <img id="overlay-logo" src="./files/Fast Food - Black.png" alt="">
+        <div id="loading-box">
+            <div id="loading-bar"></div>
+        </div>
+    </div>
     <header id="header">
-        <img id="logo" src="https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/Fast Food - Black.png" alt="logo">
+        <img id="logo" src="./files/Fast Food - Black.png" alt="logo">
         <nav>
             <i id="open-btn" class='bx bx-menu menu-btns' ></i>
             <i  id="close-btn" class='bx bx-x menu-btns' ></i>
-            <ul id="menu-box">
+            <div id="menu-overlay">
+                <ul id="menu-box">
                 <li class="navs"><a href="#home-loc">Home</a></li>
                 <hr class="splitter">
                 <li class="navs"><a href="#about-loc">About Us</a></li>
@@ -26,6 +33,7 @@
                 <li class="navs"><a href="#info-loc">More Info</a></li>
                 <hr class="splitter">
             </ul>
+            </div>
             <ul class="nav-bar">
                 <li class="navs"><a href="#home-loc">Home</a></li>
                 <li class="navs"><a href="#about-loc">About Us</a></li>
