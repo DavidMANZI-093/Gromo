@@ -23,6 +23,50 @@ body {
     position: relative;
     z-index: -10;
     font-size: 62.5%;
+    overflow: hidden;
+}
+
+#loading-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-var);
+    z-index: 10;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlay-logo {
+    object-fit: contain;
+    max-height: 4rem;
+}
+
+#loading-box {
+    display: flex;
+    background-color: white;
+    max-width: 20rem;
+    width: 70%;
+    border-radius: var(--general-radius);
+    overflow: hidden;
+    border: solid 1px black;
+}
+
+#loading-bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 0.15rem;
+    width: 0%;
+    background-color: var(--black-var1);
+    transition: width 2s linear;
 }
 
 li {
@@ -84,6 +128,22 @@ nav {
 
 #close-btn {
     display: none;
+    z-index: 2;
+    background-color: var(--white-var);
+    border-radius: 50%;
+}
+
+#menu-overlay {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+    background-image: none;
+    overflow: hidden;
 }
 
 #menu-box {
@@ -97,7 +157,7 @@ nav {
     border-radius: var(--general-radius);
     background-color: var(--white-var);
     box-shadow: var(--box-shade);
-    opacity: 90%;
+    opacity: 100%;
 }
 
 #menu-box li {
@@ -131,6 +191,29 @@ nav {
 .nav-bar {
     display: flex; /* change later */
     gap: 2.5rem;
+}
+
+.navs {
+    flex-direction: column;
+    align-items: center;
+}
+
+.navs::after {
+    content: '';
+    display: flex;
+    width: 100%;
+    padding: 0 0.1rem;
+    position: relative;
+    background-color: var(--black-var4);
+    height: 0.2rem;
+    border-radius: var(--general-radius);
+    transform: scale(0);
+    transform-origin: center;
+    transition: 0.3s;
+}
+
+.navs:hover::after {
+    transform: scale(1);
 }
 
 .btn.prime-action {
