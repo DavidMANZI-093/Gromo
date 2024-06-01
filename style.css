@@ -358,27 +358,27 @@ h2 {
 }
 
 .pricing-gridles:nth-of-type(1) .pricing-img {
-    background-image: url(./files/burger-fries\ 1.jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/burger-fries\ 1.jpg);
 }
 
 .pricing-gridles:nth-of-type(2) .pricing-img {
-    background-image: url(./files/gourmet.jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/gourmet.jpg);
 }
 
 .pricing-gridles:nth-of-type(3) .pricing-img {
-    background-image: url(./files/family-food.jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/family-food.jpg);
 }
 
 .pricing-gridles:nth-of-type(4) .pricing-img {
-    background-image: url(./files/grilled.jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/grilled.jpg);
 }
 
 .pricing-gridles:nth-of-type(5) .pricing-img {
-    background-image: url(./files/kids-meal.jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/kids-meal.jpg);
 }
 
 .pricing-gridles:nth-of-type(6) .pricing-img {
-    background-image: url(./files/party-food.jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/party-food.jpg);
 }
 
 #info-loc {
@@ -424,15 +424,15 @@ h2 {
 }
 
 #persona-1 {
-    background-image: url(./files/persona\ \(1\).jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/persona\ \(1\).jpg);
 }
 
 #persona-2 {
-    background-image: url(./files/persona\ \(2\).jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/persona\ \(2\).jpg);
 }
 
 #persona-3 {
-    background-image: url(./files/persona\ \(3\).jpg);
+    background-image: url(https://raw.githubusercontent.com/DavidMANZI-093/Gromo/main/files/persona\ \(3\).jpg);
 }
 
 .review-context {
