@@ -1,3 +1,28 @@
+const loadingOverlay = document.getElementById("loading-overlay");
+const loadingProgress = document.getElementById("loading-bar");
+
+document.onreadystatechange = function () {
+    if (document.readyState == 'loading') {
+        loadingProgress.style.width = "20%";
+    } else if (document.readyState == 'interactive') {
+        loadingProgress.style.width = "50%";
+    } else if (document.readyState == 'complete') {
+        loadingProgress.style.width = "100%";
+    }
+};
+
+function widthTransComplete(event) {
+    if (event.propertyName === 'width') {
+        console.log('Width transition completed.');
+        loadingOverlay.style.display = "none";
+        document.body.style.overflow = "scroll";
+    }
+}
+
+loadingProgress.addEventListener('transitionend', widthTransComplete);
+
+// ---------------------------------------------- //
+
 const pageHeader = document.getElementById("header");
 const pageSections = document.querySelectorAll(".main-sections");
 
@@ -75,29 +100,3 @@ for (let i = 0; i < rateStars.length; i++) {
       }
     });
 }
-
-// ---------------------------------------------- //
-
-
-const loadingOverlay = document.getElementById("loading-overlay");
-const loadingProgress = document.getElementById("loading-bar");
-
-document.onreadystatechange = function () {
-    if (document.readyState == 'loading') {
-        loadingProgress.style.width = "20%";
-    } else if (document.readyState == 'interactive') {
-        loadingProgress.style.width = "50%";
-    } else if (document.readyState == 'complete') {
-        loadingProgress.style.width = "100%";
-    }
-};
-
-function widthTransComplete(event) {
-    if (event.propertyName === 'width') {
-        console.log('Width transition completed.');
-        loadingOverlay.style.display = "none";
-        document.body.style.overflow = "scroll";
-    }
-}
-
-loadingProgress.addEventListener('transitionend', widthTransComplete);
