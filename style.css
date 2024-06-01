@@ -189,7 +189,7 @@ nav {
 }
 
 .nav-bar {
-    display: flex; /* change later */
+    display: flex;
     gap: 2.5rem;
 }
 
